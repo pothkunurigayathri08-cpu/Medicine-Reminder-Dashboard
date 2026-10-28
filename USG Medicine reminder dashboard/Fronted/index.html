@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediRemind | Medicine Reminder Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">💊 MediRemind</div>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#add-section">Add Medicine</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Never Miss Your Medication Again</h1>
+            <p>A simple, clean, and reliable dashboard designed for students to track doses, schedules, and health routines effortlessly.</p>
+            <a href="#dashboard" class="btn-primary">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Main Dashboard Section -->
+    <main class="container" id="dashboard">
+        <!-- Add Medicine Form -->
+        <section class="card" id="add-section">
+            <h2>Add New Medicine</h2>
+            <form id="medicine-form">
+                <div class="form-group">
+                    <label for="name">Medicine Name *</label>
+                    <input type="text" id="name" required placeholder="e.g., Paracetamol">
+                </div>
+                <div class="form-group">
+                    <label for="dosage">Dosage *</label>
+                    <input type="text" id="dosage" required placeholder="e.g., 500mg">
+                </div>
+                <div class="form-group">
+                    <label for="time">Reminder Time *</label>
+                    <input type="time" id="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="frequency">Frequency *</label>
+                    <select id="frequency" required>
+                        <option value="Daily">Daily</option>
+                        <option value="Twice a Day">Twice a Day</option>
+                        <option value="Weekly">Weekly</option>
+                        <option value="As Needed">As Needed</option>
+                    </select>
+                </div>
+                <div class="form-group full-width">
+                    <label for="notes">Notes (Optional)</label>
+                    <textarea id="notes" placeholder="e.g., Take after meals"></textarea>
+                </div>
+                <button type="submit" class="btn-primary full-width" id="submit-btn">Save Reminder</button>
+            </form>
+            <div id="form-message" class="message"></div>
+        </section>
+
+        <!-- Medicine List Section -->
+        <section class="card">
+            <div class="header-flex">
+                <h2>Your Reminders</h2>
+                <input type="text" id="search-box" placeholder="Search medicines...">
+            </div>
+            <div id="loading" class="loading hidden">Loading reminders...</div>
+            <div id="medicine-list" class="medicine-grid">
+                <!-- Dynamic cards will appear here -->
+            </div>
+            <div id="empty-state" class="empty-state hidden">No reminders found. Add your first medicine above!</div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MediRemind. Built for students and beginners.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
